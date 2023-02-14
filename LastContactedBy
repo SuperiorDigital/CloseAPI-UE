@@ -1,0 +1,75 @@
+var sheetId = "1XJWmibO_kqNoXeJGNa7DUapbXEbUSPrcKndBW7C6c78";
+var apiKey = 'api_4gwObRuC7bnvZb9qj1AZUb.4egW8BZ8n03mfeVNMPj9ND';
+
+// QUERY LAST CONTACTED 
+
+var queryLastContactedBy = {
+  "include_counts": true,
+  "limit": null,
+  "query": {
+    "negate": false,
+    "queries": [
+      {
+        "negate": false,
+        "object_type": "lead",
+        "type": "object_type"
+      },
+      {
+        "negate": false,
+        "queries": [
+          {
+            "negate": false,
+            "queries": [
+              {
+                "condition": {
+                  "object_ids": [
+                    "user_TEvnRREMs02ZCpClLOQOeAkXn5VUVihDaijBKmZhmij"
+                  ],
+                  "reference_type": "user_or_group",
+                  "type": "reference"
+                },
+                "field": {
+                  "custom_field_id": "lcf_GgKHcL1b0duVChwYDQcv7revfyxv0lg28eq8H5xmYNL",
+                  "type": "custom_field"
+                },
+                "negate": false,
+                "type": "field_condition"
+              }
+            ],
+            "type": "and"
+          }
+        ],
+        "type": "and"
+      }
+    ],
+    "type": "and"
+  },
+  "results_limit": null,
+  "sort": []
+}
+
+// RUN CLOSE API 
+
+function runCloseAPI() {
+   var options = {
+      method: 'post',
+      contentType: 'application/json',
+      headers: {
+         Authorization: 'Basic ' + Utilities.base64Encode(apiKey + ':')
+      }
+   };
+
+   // Get total LastContactedBy
+   options.payload = JSON.stringify(queryLastContactedBy);
+   var responseLastContactedBy = UrlFetchApp.fetch('https://api.close.com/api/v1/data/search/', options);
+   var dataLastContactedBy = JSON.parse(responseLastContactedBy.getContentText());
+   var totalLastContactedBy = dataLastContactedBy['count']['total'];
+   Utilities.sleep(500); // Wait for 0.5 seconds before making the next request
+
+   var sheet = SpreadsheetApp.openById(sheetId);
+   sheet.getRange("D1").setValue(totalLastContactedBy);
+
+
+} // <-- Add this closing curly brace to properly end the runCloseAPI function
+
+runCloseAPI(); // Call the runCloseAPI function to execute the script
