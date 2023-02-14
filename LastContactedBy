@@ -29,8 +29,9 @@ var queryLastContactedBy = {
                   "type": "reference"
                 },
                 "field": {
-                  "custom_field_id": "lcf_GgKHcL1b0duVChwYDQcv7revfyxv0lg28eq8H5xmYNL",
-                  "type": "custom_field"
+                  "field_name": "last_communication_user_id",
+                  "object_type": "lead",
+                  "type": "regular_field"
                 },
                 "negate": false,
                 "type": "field_condition"
@@ -59,7 +60,7 @@ function runCloseAPI() {
       }
    };
 
-   // Get total LastContactedBy
+   // Get total last contacted by
    options.payload = JSON.stringify(queryLastContactedBy);
    var responseLastContactedBy = UrlFetchApp.fetch('https://api.close.com/api/v1/data/search/', options);
    var dataLastContactedBy = JSON.parse(responseLastContactedBy.getContentText());
@@ -67,7 +68,7 @@ function runCloseAPI() {
    Utilities.sleep(500); // Wait for 0.5 seconds before making the next request
 
    var sheet = SpreadsheetApp.openById(sheetId);
-   sheet.getRange("D1").setValue(totalLastContactedBy);
+   sheet.getRange("E2").setValue(totalLastContactedBy);
 
 
 } // <-- Add this closing curly brace to properly end the runCloseAPI function
