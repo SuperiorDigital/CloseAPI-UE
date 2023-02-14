@@ -1,0 +1,584 @@
+var sheetId = ".......";
+var apiKey = '.......';
+
+// QUERY BOOKED 
+
+var queryBooked = {
+   "include_counts": true,
+   "limit": null,
+   "query": {
+      "negate": false,
+      "queries": [{
+            "negate": false,
+            "object_type": "lead",
+            "type": "object_type"
+         },
+         {
+            "negate": false,
+            "queries": [{
+               "negate": false,
+               "queries": [{
+                  "condition": {
+                     "object_ids": [
+                        "stat_sacLdydwabO606ITQd8bQcmZ0FNTiGvn9ThLhWGx0mZ"
+                     ],
+                     "reference_type": "status.lead",
+                     "type": "reference"
+                  },
+                  "field": {
+                     "field_name": "status_id",
+                     "object_type": "lead",
+                     "type": "regular_field"
+                  },
+                  "negate": false,
+                  "type": "field_condition"
+               }],
+               "type": "and"
+            }],
+            "type": "and"
+         }
+      ],
+      "type": "and"
+   },
+   "results_limit": null,
+   "sort": []
+};
+
+// QUERY NOSHOWS  
+
+
+var queryNoShows = {
+   "include_counts": true,
+   "limit": null,
+   "query": {
+      "negate": false,
+      "queries": [{
+            "negate": false,
+            "object_type": "lead",
+            "type": "object_type"
+         },
+         {
+            "negate": false,
+            "queries": [{
+               "negate": false,
+               "queries": [{
+                  "condition": {
+                     "object_ids": [
+                        "stat_hjdnIzMDfKEYPiiVJkDmWGmP4s8fAtSRktu8so5olA1"
+                     ],
+                     "reference_type": "status.lead",
+                     "type": "reference"
+                  },
+                  "field": {
+                     "field_name": "status_id",
+                     "object_type": "lead",
+                     "type": "regular_field"
+                  },
+                  "negate": false,
+                  "type": "field_condition"
+               }],
+               "type": "and"
+            }],
+            "type": "and"
+         }
+      ],
+      "type": "and"
+   },
+   "results_limit": null,
+   "sort": []
+};
+
+// QUERY FOLLOW UP 
+
+var queryTotalFollowUp = {
+   "include_counts": true,
+   "limit": null,
+   "query": {
+      "negate": false,
+      "queries": [{
+            "negate": false,
+            "object_type": "lead",
+            "type": "object_type"
+         },
+         {
+            "negate": false,
+            "queries": [{
+               "negate": false,
+               "queries": [{
+                  "condition": {
+                     "object_ids": [
+                        "stat_qJCaSLyUKLQ9XEcCevBSKt9UtkCvRkpurWodoKzsDCB"
+                     ],
+                     "reference_type": "status.lead",
+                     "type": "reference"
+                  },
+                  "field": {
+                     "field_name": "status_id",
+                     "object_type": "lead",
+                     "type": "regular_field"
+                  },
+                  "negate": false,
+                  "type": "field_condition"
+               }],
+               "type": "and"
+            }],
+            "type": "and"
+         }
+      ],
+      "type": "and"
+   },
+   "results_limit": null,
+   "sort": []
+};
+
+// QUERY UNQUAL 
+
+var queryTotalUnqualified = {
+   "include_counts": true,
+   "limit": null,
+   "query": {
+      "negate": false,
+      "queries": [{
+            "negate": false,
+            "object_type": "lead",
+            "type": "object_type"
+         },
+         {
+            "negate": false,
+            "queries": [{
+               "negate": false,
+               "queries": [{
+                  "condition": {
+                     "object_ids": [
+                        "stat_gWFmqVhFSrwLfkx4P7vo1uAXNxzgYngkRbXmR1wqtPF" // Change this with the status needed
+                     ],
+                     "reference_type": "status.lead",
+                     "type": "reference"
+                  },
+                  "field": {
+                     "field_name": "status_id",
+                     "object_type": "lead",
+                     "type": "regular_field"
+                  },
+                  "negate": false,
+                  "type": "field_condition"
+               }],
+               "type": "and"
+            }],
+            "type": "and"
+         }
+      ],
+      "type": "and"
+   },
+   "results_limit": null,
+   "sort": []
+};
+
+// QUERY DEFERRED 
+
+var queryTotalDeferred = {
+   "include_counts": true,
+   "limit": null,
+   "query": {
+      "negate": false,
+      "queries": [{
+            "negate": false,
+            "object_type": "lead",
+            "type": "object_type"
+         },
+         {
+            "negate": false,
+            "queries": [{
+               "negate": false,
+               "queries": [{
+                  "condition": {
+                     "object_ids": [
+                        "stat_vGEh4Q5HSliBzqDB5Lc2lUqIzE8AQzkERttpLKJOdB4"
+                     ],
+                     "reference_type": "status.lead",
+                     "type": "reference"
+                  },
+                  "field": {
+                     "field_name": "status_id",
+                     "object_type": "lead",
+                     "type": "regular_field"
+                  },
+                  "negate": false,
+                  "type": "field_condition"
+               }],
+               "type": "and"
+            }],
+            "type": "and"
+         }
+      ],
+      "type": "and"
+   },
+   "results_limit": null,
+   "sort": []
+};
+
+// QUERY PREPHASE 1 
+
+var queryPrePhase1 = {
+  "include_counts": true,
+  "limit": null,
+  "query": {
+    "negate": false,
+    "queries": [
+      {
+        "negate": false,
+        "object_type": "lead",
+        "type": "object_type"
+      },
+      {
+        "negate": false,
+        "queries": [
+          {
+            "negate": false,
+            "queries": [
+              {
+                "condition": {
+                  "object_ids": [
+                    "stat_qYZpSUDc3uoQX3OAtUioIKoYrTWUOg9VmdrYWsG7jL6"
+                  ],
+                  "reference_type": "status.lead",
+                  "type": "reference"
+                },
+                "field": {
+                  "field_name": "status_id",
+                  "object_type": "lead",
+                  "type": "regular_field"
+                },
+                "negate": false,
+                "type": "field_condition"
+              }
+            ],
+            "type": "and"
+          }
+        ],
+        "type": "and"
+      }
+    ],
+    "type": "and"
+  },
+  "results_limit": null,
+  "sort": []
+};
+
+// QUERY CONTRACT SENT 
+
+var queryContractSent = {
+   "include_counts": true,
+   "limit": null,
+   "query": {
+      "negate": false,
+      "queries": [{
+            "negate": false,
+            "object_type": "lead",
+            "type": "object_type"
+         },
+         {
+            "negate": false,
+            "queries": [{
+               "negate": false,
+               "queries": [{
+                  "condition": {
+                     "object_ids": [
+                        "stat_xLIo8ghx3UW8NjRwPyZcSgYKIF2Ib4WK9Qsl9VfLOLr" // Replace this with the status ID for "ContractSent"
+                     ],
+                     "reference_type": "status.lead",
+                     "type": "reference"
+                  },
+                  "field": {
+                     "field_name": "status_id",
+                     "object_type": "lead",
+                     "type": "regular_field"
+                  },
+                  "negate": false,
+                  "type": "field_condition"
+               }],
+               "type": "and"
+            }],
+            "type": "and"
+         }
+      ],
+      "type": "and"
+   },
+   "results_limit": null,
+   "sort": []
+};
+
+// QUERY BAD FIT 
+
+var queryBadFit = {
+  "limit": null,
+  "query": {
+    "negate": false,
+    "queries": [
+      {
+        "negate": false,
+        "object_type": "lead",
+        "type": "object_type"
+      },
+      {
+        "negate": false,
+        "queries": [
+          {
+            "negate": false,
+            "queries": [
+              {
+                "condition": {
+                  "object_ids": [
+                    "stat_yEscMoQ1hg7IkhzEpTET4XVeIivSCROC63AthDPw8pe"
+                  ],
+                  "reference_type": "status.lead",
+                  "type": "reference"
+                },
+                "field": {
+                  "field_name": "status_id",
+                  "object_type": "lead",
+                  "type": "regular_field"
+                },
+                "negate": false,
+                "type": "field_condition"
+              }
+            ],
+            "type": "and"
+          },
+          {
+            "negate": false,
+            "queries": [
+              {
+                "condition": {
+                  "mode": "full_words",
+                  "type": "text",
+                  "value": "CUSTOMTEXT"
+                },
+                "field": {
+                  "custom_field_id": "lcf_e4yVaU6Cef48kCw4beujbf6Aq3kyvbBxvDTTqu8kMyv",
+                  "type": "custom_field"
+                },
+                "negate": false,
+                "type": "field_condition"
+              }
+            ],
+            "type": "and"
+          }
+        ],
+        "type": "and"
+      }
+    ],
+    "type": "and"
+  },
+  "results_limit": null,
+  "sort": [],
+  "include_counts": true
+};
+
+// QUERY QUALIFIED 
+
+var queryQualified = {
+  "limit": null,
+  "query": {
+    "negate": false,
+    "queries": [
+      {
+        "negate": false,
+        "object_type": "lead",
+        "type": "object_type"
+      },
+      {
+        "negate": false,
+        "queries": [
+          {
+            "negate": false,
+            "queries": [
+              {
+                "condition": {
+                  "object_ids": [
+                    "stat_Gdbm5gEJ49RCxRsGxddYDCCdPcECLGmX4maRLKKWMU0"
+                  ],
+                  "reference_type": "status.lead",
+                  "type": "reference"
+                },
+                "field": {
+                  "field_name": "status_id",
+                  "object_type": "lead",
+                  "type": "regular_field"
+                },
+                "negate": false,
+                "type": "field_condition"
+              }
+            ],
+            "type": "and"
+          },
+          {
+            "negate": false,
+            "queries": [
+              {
+                "condition": {
+                  "mode": "full_words",
+                  "type": "text",
+                  "value": "CUSTOM TEXT"
+                },
+                "field": {
+                  "custom_field_id": "lcf_e4yVaU6Cef48kCw4beujbf6Aq3kyvbBxvDTTqu8kMyv",
+                  "type": "custom_field"
+                },
+                "negate": false,
+                "type": "field_condition"
+              }
+            ],
+            "type": "and"
+          }
+        ],
+        "type": "and"
+      }
+    ],
+    "type": "and"
+  },
+  "results_limit": null,
+  "sort": [],
+  "include_counts": true
+};
+
+// QUERY CLIENTS 
+
+var queryClients = {
+   "include_counts": true,
+   "limit": null,
+   "query": {
+      "negate": false,
+      "queries": [{
+            "negate": false,
+            "object_type": "lead",
+            "type": "object_type"
+         },
+         {
+            "negate": false,
+            "queries": [{
+               "negate": false,
+               "queries": [{
+                  "condition": {
+                     "object_ids": [
+                        "stat_Q3Z2IR7EMYI1kGRSJZCOmqqIzR11Np5hvdWTHpNZoKv" // Change this with the status needed
+                     ],
+                     "reference_type": "status.lead",
+                     "type": "reference"
+                  },
+                  "field": {
+                     "field_name": "status_id",
+                     "object_type": "lead",
+                     "type": "regular_field"
+                  },
+                  "negate": false,
+                  "type": "field_condition"
+               }],
+               "type": "and"
+            }],
+            "type": "and"
+         }
+      ],
+      "type": "and"
+   },
+   "results_limit": null,
+   "sort": []
+};
+
+
+// RUN CLOSE API 
+
+function runCloseAPI() {
+   var options = {
+      method: 'post',
+      contentType: 'application/json',
+      headers: {
+         Authorization: 'Basic ' + Utilities.base64Encode(apiKey + ':')
+      }
+   };
+
+   // Get total booked
+   options.payload = JSON.stringify(queryBooked);
+   var responseBooked = UrlFetchApp.fetch('https://api.close.com/api/v1/data/search/', options);
+   var dataBooked = JSON.parse(responseBooked.getContentText());
+   var totalBooked = dataBooked['count']['total'];
+   Utilities.sleep(4000); // Wait for 4 seconds before making the next request
+
+   // Get total no-shows
+   options.payload = JSON.stringify(queryNoShows);
+   var responseNoShows = UrlFetchApp.fetch('https://api.close.com/api/v1/data/search/', options);
+   var dataNoShows = JSON.parse(responseNoShows.getContentText());
+   var totalNoShows = dataNoShows['count']['total'];
+   Utilities.sleep(4000); // Wait for 4 seconds before making the next request
+
+   // Get total follow-ups
+   options.payload = JSON.stringify(queryTotalFollowUp);
+   var responseTotalFollowUp = UrlFetchApp.fetch('https://api.close.com/api/v1/data/search/', options);
+   var dataTotalFollowUp = JSON.parse(responseTotalFollowUp.getContentText());
+   var totalFollowUp = dataTotalFollowUp['count']['total'];
+   Utilities.sleep(4000); // Wait for 4 seconds before making the next request
+
+   // Get total unqualified
+   options.payload = JSON.stringify(queryTotalUnqualified);
+   var responseTotalUnqualified = UrlFetchApp.fetch('https://api.close.com/api/v1/data/search/', options);
+   var dataTotalUnqualified = JSON.parse(responseTotalUnqualified.getContentText());
+   var totalUnqualified = dataTotalUnqualified['count']['total'];
+   Utilities.sleep(4000); // Wait for 4 seconds before making the next request
+
+   // Get total deferred
+   options.payload = JSON.stringify(queryTotalDeferred);
+   var responseTotalDeferred = UrlFetchApp.fetch('https://api.close.com/api/v1/data/search/', options);
+   var dataTotalDeferred = JSON.parse(responseTotalDeferred.getContentText());
+   var totalDeferred = dataTotalDeferred['count']['total'];
+   Utilities.sleep(4000); // Wait for 4 seconds before making the next request
+
+   // Get total prephase1
+   options.payload = JSON.stringify(queryPrePhase1);
+   var responsePrePhase1 = UrlFetchApp.fetch('https://api.close.com/api/v1/data/search/', options);
+   var dataTotalPrePhase1 = JSON.parse(responsePrePhase1.getContentText());
+   var totalPrePhase1 = dataTotalPrePhase1['count']['total'];
+   Utilities.sleep(4000); // Wait for 4 seconds before making the next request
+
+   // Get total contract sent
+   options.payload = JSON.stringify(queryContractSent);
+   var responseContractSent = UrlFetchApp.fetch('https://api.close.com/api/v1/data/search/', options);
+   var dataContractSent = JSON.parse(responseContractSent.getContentText());
+   var totalContractSent = dataContractSent['count']['total'];
+   Utilities.sleep(4000); // Wait for 4 seconds before making the next request
+
+   // Get total bad fit
+   options.payload = JSON.stringify(queryBadFit);
+   var responseBadFit = UrlFetchApp.fetch('https://api.close.com/api/v1/data/search/', options);
+   var dataBadFit = JSON.parse(responseBadFit.getContentText());
+   var totalBadFit = dataBadFit['count']['total'];
+   Utilities.sleep(4000); // Wait for 4 seconds before making the next request
+
+      // Get total qualified
+   options.payload = JSON.stringify(queryQualified);
+   var responseQualified = UrlFetchApp.fetch('https://api.close.com/api/v1/data/search/', options);
+   var dataQualified = JSON.parse(responseQualified.getContentText());
+   var totalQualified = dataQualified['count']['total'];
+   Utilities.sleep(4000); // Wait for 4 seconds before making the next request
+
+      // Get total clients 
+   options.payload = JSON.stringify(queryClients);
+   var responseClients = UrlFetchApp.fetch('https://api.close.com/api/v1/data/search/', options);
+   var dataClients = JSON.parse(responseClients.getContentText());
+   var totalClients = dataClients['count']['total'];
+   Utilities.sleep(4000); // Wait for 4 seconds before making the next request
+
+   var sheet = SpreadsheetApp.openById(sheetId);
+   sheet.getRange("B2").setValue(totalBooked);
+   sheet.getRange("B3").setValue(totalNoShows);
+   sheet.getRange("B4").setValue(totalFollowUp);
+   sheet.getRange("B5").setValue(totalUnqualified);
+   sheet.getRange("B6").setValue(totalDeferred);
+   sheet.getRange("B7").setValue(totalPrePhase1);
+   sheet.getRange("B8").setValue(totalContractSent);
+   sheet.getRange("B9").setValue(totalBadFit);
+   sheet.getRange("B10").setValue(totalQualified);
+   sheet.getRange("B11").setValue(totalClients);
+
+}
+
+runCloseAPI();
